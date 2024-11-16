@@ -63,7 +63,7 @@ sed -i "s/echo '\[ -n/echo '# \[ -n/g" package/lean/default-settings/files/zzz-d
 
 # 开启wifi选项
 sed -i 's/disabled=*.*/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-sed -i 's/ssid=*.*/ssid=JUMP/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/ssid=*.*/ssid=Red Fox/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 添加关机按钮到系统选项
 curl -fsSL https://raw.githubusercontent.com/ywt114/diy/main/poweroff.htm > feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm
@@ -145,12 +145,12 @@ sed -i 's/iperf3-ssl[[:space:]]*//g' target/linux/x86/Makefile
 # sed -i 's/grep '\''=\[ym\]'\'' $(LINUX_DIR)\/.config.set | LC_ALL=C sort | $(MKHASH) md5 >/cp $(TOPDIR)\/vermagic/g' include/kernel-defaults.mk
 # sed -i 's/$(SCRIPT_DIR)\/kconfig.pl $(LINUX_DIR)\/.config | $(MKHASH) md5/cat $(LINUX_DIR)\/.vermagic/g' package/kernel/linux/Makefile
 
-sed -i 's/Variable1 = "*.*"/Variable1 = "ywt114"/g' package/lean/luci-app-gpsysupgrade/luasrc/model/cbi/gpsysupgrade/sysupgrade.lua
-sed -i 's/Variable2 = "*.*"/Variable2 = "jump"/g' package/lean/luci-app-gpsysupgrade/luasrc/model/cbi/gpsysupgrade/sysupgrade.lua
+sed -i 's/Variable1 = "*.*"/Variable1 = "Red Fox"/g' package/lean/luci-app-gpsysupgrade/luasrc/model/cbi/gpsysupgrade/sysupgrade.lua
+sed -i 's/Variable2 = "*.*"/Variable2 = "Red Fox"/g' package/lean/luci-app-gpsysupgrade/luasrc/model/cbi/gpsysupgrade/sysupgrade.lua
 sed -i 's/Variable3 = "*.*"/Variable3 = "x86_64"/g' package/lean/luci-app-gpsysupgrade/luasrc/model/cbi/gpsysupgrade/sysupgrade.lua
 sed -i 's/Variable4 = "*.*"/Variable4 = "6.6"/g' package/lean/luci-app-gpsysupgrade/luasrc/model/cbi/gpsysupgrade/sysupgrade.lua
-sed -i 's/Variable1 = "*.*"/Variable1 = "ywt114"/g' package/lean/luci-app-gpsysupgrade/root/usr/bin/upgrade.lua
-sed -i 's/Variable2 = "*.*"/Variable2 = "jump"/g' package/lean/luci-app-gpsysupgrade/root/usr/bin/upgrade.lua
+sed -i 's/Variable1 = "*.*"/Variable1 = "Red Fox"/g' package/lean/luci-app-gpsysupgrade/root/usr/bin/upgrade.lua
+sed -i 's/Variable2 = "*.*"/Variable2 = "Red Fox"/g' package/lean/luci-app-gpsysupgrade/root/usr/bin/upgrade.lua
 sed -i 's/Variable3 = "*.*"/Variable3 = "x86_64"/g' package/lean/luci-app-gpsysupgrade/root/usr/bin/upgrade.lua
 sed -i 's/Variable4 = "*.*"/Variable4 = "6.6"/g' package/lean/luci-app-gpsysupgrade/root/usr/bin/upgrade.lua
 
