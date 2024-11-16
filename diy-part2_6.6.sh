@@ -47,7 +47,7 @@ sed -i "s/DISTRIB_ID='*.*'/DISTRIB_ID='OpenWrt'/g" package/base-files/files/etc/
 sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='OpenWrt'/g"  package/base-files/files/etc/openwrt_release
 sed -i '/(<%=pcdata(ver.luciversion)%>)/a\      built by Red Fox' package/lean/autocore/files/x86/index.htm
 echo -n "$(date +'%Y%m%d')" > package/base-files/files/etc/openwrt_version
-curl -fsSL https://raw.githubusercontent.com/ywt114/diy/main/banner_JUMP > package/base-files/files/etc/banner
+# curl -fsSL https://raw.githubusercontent.com/ywt114/diy/main/banner_JUMP > package/base-files/files/etc/banner
 
 # 修改部分默认设置
 sed -i "/exit 0/i sed -i '\/oui\/d' \/etc\/opkg\/distfeeds.conf" package/lean/default-settings/files/zzz-default-settings
@@ -113,13 +113,6 @@ git clone -b main https://github.com/sirpdboy/sirpdboy-package package/lean/sirp
 git clone -b main https://github.com/linkease/openwrt-app-actions package/lean/openwrt-app-actions
 \cp -rf package/lean/openwrt-app-actions/applications/luci-app-multiaccountdial package/lean
 \rm -rf package/lean/openwrt-app-actions
-git clone -b main https://github.com/linkease/istore package/lean/istore
-# sed -i 's/+luci-lib-ipkg/+luci-base/g' package/lean/istore/luci/luci-app-store/Makefile
-\cp -rf package/lean/istore/luci/* package/lean
-\cp -rf package/lean/istore/translations package/lean
-\rm -rf package/lean/istore
-git clone -b main https://github.com/linkease/nas-packages-luci package/lean/nas-packages-luci
-sed -i 's/istorex_template")).leaf/istorex_template"), _("iStoreX"), 3).leaf/g' package/lean/nas-packages-luci/luci/luci-app-istorex/luasrc/controller/istorex.lua
 \cp -rf package/lean/nas-packages-luci/luci/* package/lean
 \rm -rf package/lean/nas-packages-luci
 git clone -b master https://github.com/linkease/nas-packages package/lean/nas-packages
